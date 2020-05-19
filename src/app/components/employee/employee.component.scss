@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #6ebe49;
+  }
+  ::ng-deep .mat-progress-spinner circle {
+    fill: transparent;
+    transform-origin: center;
+    transition: stroke-dashoffset 225ms linear !important;
+}
+::ng-deep .mat-progress-spinner.mat-progress-spinner-indeterminate-animation[mode=indeterminate] circle {
+  transition-property: stroke !important;
+  animation-duration: 4s !important;
+  animation-timing-function: cubic-bezier(.35,0,.25,1) !important;
+  animation-iteration-count: infinite !important;
+}

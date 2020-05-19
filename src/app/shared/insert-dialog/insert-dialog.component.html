@@ -1,0 +1,71 @@
+<h1 mat-dialog-title>{{title}} Data</h1>
+<div mat-dialog-content>
+  <form name="insertForm" [formGroup]="insertForm" (ngSubmit)="insertForm.valid && onSubmit()">
+    <div>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" id="name" formControlName="name" 
+         [ngClass]="{'is-invalid':insertForm.get('name').touched && insertForm.get('name').invalid}" required>
+      </mat-form-field>
+      <div *ngIf="insertForm.get('name').touched && insertForm.get('name').invalid"  class="invalid-feedback">
+        <div *ngIf="insertForm.get('name').errors.required">Name is required</div>
+        <div *ngIf="insertForm.get('name').errors.minlength">Name must be min 6 chars</div>
+      </div>
+    </div>
+    
+    <div>
+      <mat-form-field>
+        <mat-label>Surname</mat-label>
+        <input matInput type="text" id="surname" formControlName="surname" 
+         [ngClass]="{'is-invalid':insertForm.get('surname').touched && insertForm.get('surname').invalid}" required>
+      </mat-form-field>
+      <div *ngIf="insertForm.get('surname').touched && insertForm.get('surname').invalid"  class="invalid-feedback">
+        <div *ngIf="insertForm.get('surname').errors.required">Surname is required</div>
+        <div *ngIf="insertForm.get('surname').errors.minlength">Surname must be min 6 chars</div>
+      </div>
+    </div>
+    
+    <div>
+      <mat-form-field>
+        <mat-label>Department</mat-label>
+        <input matInput type="text" id="dept" formControlName="dept"  
+        [ngClass]="{'is-invalid':insertForm.get('dept').touched && insertForm.get('dept').invalid}" required>
+      </mat-form-field>
+      <div *ngIf="insertForm.get('dept').touched && insertForm.get('dept').invalid"  class="invalid-feedback">
+        <div *ngIf="insertForm.get('dept').errors.required">Department is required</div>
+        <div *ngIf="insertForm.get('dept').errors.minlength">Department must be min 6 chars</div>
+      </div>
+    </div>
+    
+    <div>
+      <mat-form-field>
+        <mat-label>JoinDate</mat-label>
+        <input matInput [matDatepicker]="picker" id="joindate" type="text" formControlName="joindate"  
+        [ngClass]="{'is-invalid':insertForm.get('joindate').touched && insertForm.get('joindate').invalid}" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+       <div *ngIf="insertForm.get('joindate').touched && insertForm.get('joindate').invalid"  class="invalid-feedback">
+        <div *ngIf="insertForm.get('joindate').errors.required">JoinDate is required</div>
+      </div>
+    </div>
+
+    <!-- <div>
+      <mat-form-field>
+        <mat-label>Qualification</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="food">
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div> -->
+    
+  </form>
+ 
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="data" (click)="onInsertSubmit()"  *ngIf="this.isSubmit" [disabled]="!insertForm.valid">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+  <button mat-raised-button [mat-dialog-close]="data" (click)="onUpdateSubmit()"  *ngIf="this.isUpdate" [disabled]="!insertForm.valid">Update</button>&nbsp;
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+</div>
