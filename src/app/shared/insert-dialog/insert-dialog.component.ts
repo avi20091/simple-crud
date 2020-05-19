@@ -83,19 +83,20 @@ export class InsertDialogComponent implements OnInit {
     }    
     
     this.empservice.getInsertEmployee(param)
-         .subscribe(res => {
-          if (res.status === 'success') {
-            console.log(res.status);
-           
-            let successMessage = 'Record Inserted Successfully...!!!';
-            this.toasterService.showToaster(successMessage, 'success');
-            this.toasterService.showToaster(successMessage, 'ok');
-            this.getEmployeeDetails();
-          } else if (res.status == 'failure') {
-            console.log("server side error...!!!");
-            this.toasterService.showToaster(res.message, 'snackbar-error');
-          }
-    });
+      .subscribe(res => {
+        if (res) {
+          console.log(res.status);
+
+          let successMessage = 'Record Inserted Successfully...!!!';
+          this.toasterService.showToaster(successMessage, 'success');
+          this.toasterService.showToaster(successMessage, 'ok');
+          this.getEmployeeDetails();
+        }
+      },
+        error => {
+          console.log("server side error...!!!");
+          this.toasterService.showToaster('Unable to insert new record', 'snackbar-error');
+        });
   }
 
   onUpdateSubmit() {

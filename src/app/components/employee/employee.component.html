@@ -6,6 +6,12 @@
 <app-mat-spinner-overlay *ngIf='showSpinner' overlay="true"></app-mat-spinner-overlay>
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" *ngIf="!showSpinner">
 
+    <!-- Row Index Column -->
+    <ng-container matColumnDef="index">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Sr.No. </th>
+      <td mat-cell *matCellDef="let element; let i = index">{{i+1}}</td>
+    </ng-container>
+
     <!-- ID Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee ID </th>

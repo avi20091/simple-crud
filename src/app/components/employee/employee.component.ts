@@ -19,10 +19,12 @@ export class EmployeeComponent implements OnInit {
   result:any;
   dataSource:any;
   rowData:any;
-  displayedColumns: string[] = ['id', 'name', 'surname', 'dept','joindate','action'];
+  displayedColumns: string[] = ['index', 'id', 'name', 'surname', 'dept','joindate','action'];
   showSpinner:boolean = true;
-  @ViewChild(MatSort, {static: false}) set content(sort: MatSort) {
-    this.dataSource.sort = sort;
+  @ViewChild(MatSort, { static: false }) set content(sort: MatSort) {
+    if (this.dataSource) {
+      this.dataSource.sort = sort;
+    }
   }
 
   
