@@ -11,7 +11,7 @@ import { MatSort, MatSortHeader, MatSortModule } from '@angular/material/sort';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatIconModule, MatSnackBarModule, MatInputModule, MatDialogModule, MatRadioModule, MatToolbarModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatIconModule, MatSnackBarModule, MatInputModule, MatDialogModule, MatRadioModule, MatToolbarModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule, MatMenuModule, MatTooltipModule } from '@angular/material';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { EmployeeService } from './service/employee.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -51,7 +51,9 @@ import { MatSpinnerOverlayComponent } from './components/mat-spinner-overlay/mat
     MatProgressSpinnerModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatNativeDateModule       
+    MatNativeDateModule,
+    MatMenuModule,
+    MatTooltipModule       
   ],
   providers: [EmployeeService, ToasterService,DatePipe],
   bootstrap: [AppComponent],

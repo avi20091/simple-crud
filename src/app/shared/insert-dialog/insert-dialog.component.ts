@@ -28,6 +28,7 @@ export class InsertDialogComponent implements OnInit {
   isAdded: boolean = false;
   result:any;
   dataSource:any;
+  showSpinner:boolean = true;
 
   insertForm = new FormGroup({
     name: new FormControl('', [Validators.required,Validators.minLength(6)]),
@@ -64,6 +65,7 @@ export class InsertDialogComponent implements OnInit {
 
   getEmployeeDetails() {
     this.empservice.getEmployee().subscribe(res =>{
+      this.showSpinner = false;
       this.result = res;
       this.dataSource = new MatTableDataSource<Element>(this.result);
     });
