@@ -31,9 +31,9 @@ export class InsertDialogComponent implements OnInit {
   showSpinner:boolean = true;
 
   insertForm = new FormGroup({
-    name: new FormControl('', [Validators.required,Validators.minLength(6)]),
-    surname: new FormControl('', [Validators.required,Validators.minLength(6)]),
-    dept: new FormControl('', [Validators.required,Validators.minLength(6)]),
+    name: new FormControl('', [Validators.required,Validators.minLength(3)]),
+    surname: new FormControl('', [Validators.required,Validators.minLength(3)]),
+    dept: new FormControl('', [Validators.required,Validators.minLength(3)]),
     joindate: new FormControl('', [Validators.required]),
   });
 

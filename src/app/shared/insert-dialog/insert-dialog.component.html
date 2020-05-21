@@ -9,7 +9,7 @@
       </mat-form-field>
       <div *ngIf="insertForm.get('name').touched && insertForm.get('name').invalid"  class="invalid-feedback">
         <div *ngIf="insertForm.get('name').errors.required">Name is required</div>
-        <div *ngIf="insertForm.get('name').errors.minlength">Name must be min 6 chars</div>
+        <div *ngIf="insertForm.get('name').errors.minlength">Name must be min 3 chars</div>
       </div>
     </div>
     
@@ -21,7 +21,7 @@
       </mat-form-field>
       <div *ngIf="insertForm.get('surname').touched && insertForm.get('surname').invalid"  class="invalid-feedback">
         <div *ngIf="insertForm.get('surname').errors.required">Surname is required</div>
-        <div *ngIf="insertForm.get('surname').errors.minlength">Surname must be min 6 chars</div>
+        <div *ngIf="insertForm.get('surname').errors.minlength">Surname must be min 3 chars</div>
       </div>
     </div>
     
@@ -33,7 +33,7 @@
       </mat-form-field>
       <div *ngIf="insertForm.get('dept').touched && insertForm.get('dept').invalid"  class="invalid-feedback">
         <div *ngIf="insertForm.get('dept').errors.required">Department is required</div>
-        <div *ngIf="insertForm.get('dept').errors.minlength">Department must be min 6 chars</div>
+        <div *ngIf="insertForm.get('dept').errors.minlength">Department must be min 3 chars</div>
       </div>
     </div>
     
@@ -46,7 +46,7 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
        <div *ngIf="insertForm.get('joindate').touched && insertForm.get('joindate').invalid"  class="invalid-feedback">
-        <div *ngIf="insertForm.get('joindate').errors.required">JoinDate is required</div>
+        <div *ngIf="insertForm.get('joindate').errors.required">Join Date is required</div>
       </div>
     </div>
 
